@@ -5,6 +5,8 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
  
 def change_num(num):
+    print(num)
+    num = "".join(num.split())
     num = num.replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
     final = num[:2] + "-" + num[2:]
     return final
@@ -18,7 +20,7 @@ def data():
     if request.method == 'POST':
         try:
             phone_raw = request.form.get("phone")
-            ls_raw = phone_raw.split()
+            ls_raw = phone_raw.split("\n")
             df = pd.DataFrame(ls_raw,columns = ["Phone Number"] )
             x = df["Phone Number"].apply(change_num)
             x.to_clipboard(excel = True, index = False, header = False)

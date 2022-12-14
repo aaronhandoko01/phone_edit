@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+
+{% for message in get_flashed_messages() %}
+  <!-- <li>Successful</li> -->
+  <div class="alert alert-warning alert-dismissible" role="alert" style="text-align: center;">
+    <strong>Successful!</strong> {{message}}
+    <!-- <button href="#" class="btn-close" data-dismiss="alert" aria-label="Close">CLOSE</button> -->
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  </div>
+
+
+{% endfor %}
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+
+        <title>Phone Number Edit</title>
+        
+        <style>
+        .inline-80 {
+            display: inline-block; 
+            width: 100px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+            &nbsp;
+        </div>
+        <div class="container" id="new-entry">
+            <h3>Edit Phone Number</h3>
+            <form action="/data/" method="POST" class="col-lg-4 col-lg-offset-4" style="border: 1px solid #aaa; text-align: center">
+                <div class="form-group">
+                    <label class="inline-80">Phone Number</label> &nbsp;
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <textarea type="text" id="phone" name="phone"></textarea>
+                </div>
+                <div class="form__fieldset">
+                    <input type="submit" value="SUBMIT" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+{% endblock %}
